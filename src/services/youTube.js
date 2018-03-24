@@ -10,7 +10,7 @@ angular.module('video-player')
           q: query,
           maxResults:10,
           part: 'snippet',
-          key: 'AIzaSyDWmoDnEgQLI4_tO1-juGPIkIvmg9dHaXQ'
+          key: window.YOUTUBE_API_KEY
         }
       }).then(function successCallback(response) {
         // this callback will be called asynchronously
