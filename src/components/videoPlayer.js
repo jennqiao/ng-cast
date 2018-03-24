@@ -1,10 +1,10 @@
 angular.module('video-player')
 
-.component('videoPlayer2', {
+.component('videoPlayer', {
   // TODO
   bindings: {
     video: '<'
   },
   templateUrl:
-     '/src/templates/videoPlayer.html'
+     'src/templates/videoPlayer.html'
 });

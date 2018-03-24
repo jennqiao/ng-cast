@@ -8,6 +8,7 @@ describe('app', function() {
   beforeEach(module('templates'));
 
   beforeEach(inject(function($rootScope, $compile, youTube) {
+    debugger;
     var scope = $rootScope.$new();
 
     // We're stubbing out the youTube search function so it doesn't

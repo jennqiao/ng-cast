@@ -1,11 +1,18 @@
 angular.module('video-player')
 
 .component('app', {
-  controller: function() {
+   templateUrl:
+     'src/templates/app.html',
+   controller: ('youTube', function(youTube) {
       this.videos = window.exampleVideoData;
-      this.selectVideo = () => {
+      this.currentVideo = this.videos[0];
+      this.selectVideo = (index) => {
+        this.currentVideo=this.videos[index];
       };
-    },
-  templateUrl:
-     '/src/templates/app.html'
+      this.searchResults = () => {
+        console.log('searchResults ran!');
+        console.log('this.videos', this.videos);
+        youTube.search('surfing');
+      };
+    })
 });
