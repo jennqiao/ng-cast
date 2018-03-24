@@ -1,9 +1,9 @@
 angular.module('video-player')
 
-.component('app', {
-   templateUrl:
+  .component('app', {
+    templateUrl:
      'src/templates/app.html',
-   controller: ('youTube', function(youTube) {
+    controller: ('youTube', function(youTube) {
       this.$onInit = function() {
         this.videos = [];
         this.currentVideo = {};
@@ -21,6 +21,6 @@ angular.module('video-player')
       this.result = (data) => {
         this.videos = data;
         this.currentVideo = data[0];
-      }
+      };
     })
-});
+  });
