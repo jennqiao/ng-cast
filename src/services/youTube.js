@@ -1,6 +1,6 @@
 angular.module('video-player')
 .service('youTube', function($http){
-  this.search =  function(query) {
+  this.search =  function(query, callback) {
     $http ({
     method: 'GET',
     url: 'https://www.googleapis.com/youtube/v3/search',
@@ -15,8 +15,10 @@ angular.module('video-player')
   }).then(function successCallback(response) {
       // this callback will be called asynchronously
       // when the response is available
-      this.videos = response.data.items;
-      console.log("success", response);
+      callback(response.data.items);
+      //console.log("success", response);
+      //console.log("videos", videos);
+      //sconsole.log("context", context);
     }, function errorCallback(response) {
       // called asynchronously if an error occurs
       // or server returns response with an error status.   
